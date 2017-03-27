@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
+    decompress = require('gulp-decompress'),
     download = require('gulp-download'),
     _ = require('underscore.string'),
     inquirer = require('inquirer'),
@@ -87,13 +88,14 @@ gulp.task('default', function (done) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
+
+            download('https://github.com/twbs/bootstrap-sass/archive/v3.3.7.tar.gz') //Bootstrap-sass
+              .pipe(decompress({strip: 1}))
+              .pipe(gulp.dest("./src/bootstrap"));
+
+
             gulp.src(__dirname + '/templates/**')
                 .pipe(template(answers))
-                .pipe(rename(function (file) {
-                    if (file.basename[0] === '_') {
-                        file.basename = '.' + file.basename.slice(1);
-                    }
-                }))
                 .pipe(conflict('./'))
                 .pipe(gulp.dest('./'))
                 .pipe(install())
