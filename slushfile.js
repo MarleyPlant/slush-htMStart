@@ -93,7 +93,7 @@ gulp.task('default', function (done) {
               .pipe(decompress({strip: 1}))
               .pipe(gulp.dest("./src/bootstrap"));
 
-            .download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+            download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
               .pipe(gulp.dest("./js"))
 
             gulp.src(__dirname + '/templates/**')
