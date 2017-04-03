@@ -116,7 +116,7 @@ gulp.task('default', function (done) {
                   .pipe(gulp.dest("./css/assets"));
 
                 download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js') //MDB JS
-                  .pipe(gulp.dest("./css/assets"));
+                  .pipe(gulp.dest("./js/assets"));
             }
 
             if(answers.frameworks.includes('includeFlatUI')){
@@ -129,7 +129,7 @@ gulp.task('default', function (done) {
                   .pipe(gulp.dest("./css/assets"));
 
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') //Bootstrap JS
-                  .pipe(gulp.dest("./css/assets"));
+                  .pipe(gulp.dest("./js/assets"));
             }
 
             gulp.src(__dirname + '/templates/**')
