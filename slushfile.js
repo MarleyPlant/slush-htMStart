@@ -97,7 +97,7 @@ gulp.task('default', function (done) {
     }, {
         type: 'confirm',
         name: 'addHeaderNav',
-        message: 'Add MDBoostrap Navbar to header?'
+        message: 'Add Navbar to index?'
     }, {
         type: 'confirm',
         name: 'moveon',
@@ -125,7 +125,7 @@ gulp.task('default', function (done) {
             }
 
             if(answers.frameworks.includes('includeBootstrap')){
-                download('https://maxcdn.bootstrapcdn.com/bootstr3ap/4.0.0-alpha.6/css/bootstrap.min.css') //Bootstrap CSS
+                download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css') //Bootstrap CSS
                   .pipe(gulp.dest("./css/assets"));
 
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') //Bootstrap JS
