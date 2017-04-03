@@ -1,3 +1,12 @@
+/*
+ * <%= appName %>
+ * https://github.com/<%= userName %>/<%= appNameSlug %>
+ *
+ * Copyright (c) 2017, <%= authorName %>
+ * Licensed under the MIT license.
+ */
+
+
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -6,7 +15,7 @@ var gulp = require('gulp'),
     minify = require('gulp-minify'),
 
 gulp.task('styles', function(){
-  gulp.src('src/scss/**/*.scss')
+  gulp.src('scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('css'))
 		.pipe(autoprefixer())
@@ -23,5 +32,7 @@ gulp.task('watch', function() {
 	livereload.listen();
 
 	// Watch .scss files
-	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch('scss/*.scss', ['styles']);
+	gulp.watch('scss/**/*.scss', ['styles']);
+  gulp.watch('config.json', ['bootstrap']);
 });
