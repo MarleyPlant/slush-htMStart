@@ -1,0 +1,4 @@
+<% if(frameworks.includes('includeBootstrap')) { %>.navbar {
+  padding-top: 20px !important;
+  border-radius: 0px !important;
+}<% } %>

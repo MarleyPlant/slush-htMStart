@@ -1,6 +1,9 @@
-# Slush Htmstart [![Build Status](https://secure.travis-ci.org/MarleyPlant/slush-htmstart.png?branch=master)](https://travis-ci.org/MarleyPlant/slush-htmstart) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-htmstart.png)](http://badges.enytc.com/for/npm/slush-htmstart)
+# Slush htmstart
+[![BuildStatus](https://travis-ci.com/MarleyPlant/Slush-htmstart.svg?token=coQixfkXNuyuVgGAm5J4&branch=master)](https://travis-ci.com/MarleyPlant/Slush-htmstart)
 
-> 
+[![NPM version](https://badge-me.herokuapp.com/api/npm/slush-htmstart.png)](http://badges.enytc.com/for/npm/slush-htmstart)
+
+> A Slush Generator for a wordpress starter theme.
 
 
 ## Getting Started
@@ -22,7 +25,7 @@ $ mkdir my-slush-htmstart
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-htmstart && slush htMStart
+$ cd my-slush-htmstart && slush htmstart
 ```
 
 ## Getting To Know Slush
@@ -40,11 +43,11 @@ See the [CONTRIBUTING Guidelines](https://github.com/MarleyPlant/slush-htmstart/
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/MarleyPlant/slush-htmstart/issues).
 
-## License 
+## License
 
 The MIT License
 
-Copyright (c) 2017, Marley Plant
+Copyright (c) 2017, Marley Joseph Plant
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -66,4 +69,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-

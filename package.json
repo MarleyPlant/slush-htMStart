@@ -1,10 +1,10 @@
 {
   "name": "slush-htmstart",
-  "description": "",
+  "description": "A Slush Generator for a wordpress starter theme.",
   "version": "0.1.0",
   "homepage": "https://github.com/MarleyPlant/slush-htmstart",
   "author": {
-    "name": "Marley Plant",
+    "name": "Marley Joseph Plant",
     "email": "marley@marleyplant.com"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "npm": ">=1.4.3"
   },
   "scripts": {
-    "test": "echo \"No tests\""
+    "test": "echo 'No Tests Available for this package!'"
   },
   "dependencies": {
     "slush": ">=1.0.0",
@@ -30,11 +30,10 @@
     "gulp-install": "^0.1.4",
     "gulp-conflict": "^0.1.1",
     "gulp-rename": "^1.2.0",
-    "gulp-download": "*",
     "underscore.string": "^2.3.3",
-    "gulp-decompress": "^2.0.1",
     "inquirer": "^0.8.0",
-    "iniparser": "^1.0.5"
+    "iniparser": "^1.0.5",
+    "gulp-download": "0.0.1"
   },
   "keywords": [
     "slushgenerator"

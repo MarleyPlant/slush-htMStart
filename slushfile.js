@@ -2,9 +2,10 @@
  * slush-htmstart
  * https://github.com/MarleyPlant/slush-htmstart
  *
- * Copyright (c) 2017, Marley Plant
+ * Copyright (c) 2017, Marley Joseph Plant
  * Licensed under the MIT license.
  */
+
 
 'use strict';
 
@@ -12,12 +13,13 @@ var gulp = require('gulp'),
     install = require('gulp-install'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
-    rename = require('gulp-rename'),
-    decompress = require('gulp-decompress'),
     download = require('gulp-download'),
+    rename = require('gulp-rename'),
     _ = require('underscore.string'),
     inquirer = require('inquirer'),
-    path = require('path');
+    path = require('path')
+
+
 
 function format(string) {
     var username = string.toLowerCase();
@@ -43,7 +45,6 @@ var defaults = (function () {
     if (require('fs').existsSync(configFile)) {
         user = require('iniparser').parseSync(configFile).user;
     }
-
     return {
         appName: workingDirName,
         userName: osUserName || format(user.name || ''),
@@ -77,9 +78,30 @@ gulp.task('default', function (done) {
         message: 'What is the github username?',
         default: defaults.userName
     }, {
+        name: 'frameworks',
+        message: 'Allrighty so now your gonna need some frameworks, what you after?',
+        type: 'checkbox',
+        choices: [{
+                    name: 'Bootstrap',
+                    value: 'includeBootstrap',
+                    checked: true
+                  }, {
+                    name: 'MDBootstrap',
+                    value: 'includeMDBootstrap',
+                    checked: false
+                  }, {
+                    name: 'FlatUI',
+                    value: 'includeFlatUI',
+                    checked: false
+                  }]
+    }, {
+        type: 'confirm',
+        name: 'addHeaderNav',
+        message: 'Add MDBoostrap Navbar to header?'
+    }, {
         type: 'confirm',
         name: 'moveon',
-        message: 'Continue?'
+        message: 'Finish Install?'
     }];
     //Ask
     inquirer.prompt(prompts,
@@ -87,14 +109,28 @@ gulp.task('default', function (done) {
             if (!answers.moveon) {
                 return done();
             }
+
             answers.appNameSlug = _.slugify(answers.appName);
+            if(answers.frameworks.includes('includeMDBootstrap')){
+                download(' https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css') //MDB CSS
+                  .pipe(gulp.dest("./css/assets"));
 
-            download('https://github.com/twbs/bootstrap-sass/archive/v3.3.7.tar.gz') //Bootstrap-sass
-              .pipe(decompress({strip: 1}))
-              .pipe(gulp.dest("./src/bootstrap"));
+                download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js') //MDB JS
+                  .pipe(gulp.dest("./css/assets"));
+            }
 
-            download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-              .pipe(gulp.dest("./js"))
+            if(answers.frameworks.includes('includeFlatUI')){
+                download('https://designmodo.github.io/Flat-UI/dist/css/flat-ui.css') //FlatUI CSS
+                  .pipe(gulp.dest("./css/assets"));
+            }
+
+            if(answers.frameworks.includes('includeBootstrap')){
+                download('https://maxcdn.bootstrapcdn.com/bootstr3ap/4.0.0-alpha.6/css/bootstrap.min.css') //Bootstrap CSS
+                  .pipe(gulp.dest("./css/assets"));
+
+                download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') //Bootstrap JS
+                  .pipe(gulp.dest("./css/assets"));
+            }
 
             gulp.src(__dirname + '/templates/**')
                 .pipe(template(answers))
