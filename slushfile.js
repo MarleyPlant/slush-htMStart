@@ -128,13 +128,13 @@ gulp.task('default', function (done) {
 
             if(answers.frameworks.includes('includeBootstrap' && answers.frameworks.includes('includeMDBootstrap') )){
                 //Download Bootstrap 4 Alpha
-                .pipe(gulp.dest("./css/assets"));
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css') //Bootstrap CSS
+                  .pipe(gulp.dest("./css/assets"));
 
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') //Bootstrap JS
                   .pipe(gulp.dest("./js/assets"));
             }
-            else if (answers.frameworks.includes('includeBootstrap') {
+            else if (answers.frameworks.includes('includeBootstrap')) {
                 //Download Latest Bootstrap 3
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') //Bootstrap CSS
                   .pipe(gulp.dest("./css/assets"));
