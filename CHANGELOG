@@ -7,3 +7,4 @@ v0.2.0:
   changes:
     - Bootstrap, Font-Awesome, FlatUI and MDBootstrap support
     - Option to add NavBar to index pages
+    - Initial release.
