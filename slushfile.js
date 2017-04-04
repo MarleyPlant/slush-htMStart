@@ -11,6 +11,7 @@
 
 var gulp = require('gulp'),
     install = require('gulp-install'),
+    clear = require('clear'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
     download = require('gulp-download'),
@@ -104,6 +105,18 @@ gulp.task('default', function (done) {
         message: 'Finish Install?'
     }];
     //Ask
+    clear();
+    console.log(" \n\
+                    )            *     (                           \n\
+                  ( /(   *   )  (  `    )\ )    )               )  \n\
+                  )\())` )  /(  )\))(  (()/( ( /(    )  (    ( /(  \n\
+                  ((_)\  ( )(_))((_)()\  /(_)))\())( /(  )(   )\())\n\
+                  _((_)(_(_()) (_()((_)(_)) (_))/ )(_))(()\ (_))/  \n\
+                  | || ||_   _| |  \/  |/ __|| |_ ((_)_  ((_)| |_  \n\
+                  | __ |  | |   | |\/| |\__ \|  _|/ _` || '_||  _| \n\
+                  |_||_|  |_|   |_|  |_||___/ \__|\__,_||_|   \__| \n\
+                                                                   \n\
+                ")
     inquirer.prompt(prompts,
         function (answers) {
             if (!answers.moveon) {
