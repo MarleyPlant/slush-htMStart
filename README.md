@@ -1,6 +1,5 @@
 # Slush htmstart
 [![BuildStatus](https://travis-ci.org/MarleyPlant/Slush-htmstart.svg?branch=master)](https://travis-ci.org/MarleyPlant/Slush-htmstart)
-
 [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-htmstart.png)](http://badges.enytc.com/for/npm/slush-htmstart)
 
 > A Slush Generator for a wordpress starter theme.
