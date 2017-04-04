@@ -4,18 +4,22 @@
     <% if(frameworks.includes('includeBootstrap')) { %>
     <link href="css/assets/bootstrap.min.css" rel="stylesheet"/>
     <% } %>
+    <% if(frameworks.includes('includeFontAwesome')) { %>
+    <link href="css/assets/font-awesome.min.css" rel="stylesheet"/>
+    <% } %>
     <% if(frameworks.includes('includeFlatUI')) { %>
     <link href="css/assets/flat-ui.css" rel="stylesheet"/>
     <% } %>
     <% if(frameworks.includes('includeMDBootstrap')) { %>
     <link href="css/assets/mdb.min.css" rel="stylesheet"/>
     <% } %>
+
     <link href="css/site.css" rel="stylesheet"/>
 
   </head>
 
   <body>
-    <% if(addHeaderNav) {%>
+    <% if(htmlinserts.includes('navbar')) {%>
       <% if(frameworks.includes('includeFlatUI')) { %>
         <nav class="navbar navbar-inverse" role="navigation">
           <div class="navbar-header">
@@ -44,9 +48,12 @@
       <% } %>
     <% } %>
   </body>
-  
+
   <% if(frameworks.includes('includeBootstrap')) { %>
   <script src="js/assets/bootstrap.min.js" type="text/rocketscript"></script>
+  <% } %>
+  <% if(frameworks.includes('includeJQuery')) { %>
+  <script src="js/assets/jquery-3.2.1.min.js" type="text/rocketscript"></script>
   <% } %>
   <% if(frameworks.includes('includeMDBootstrap')) { %>
   <script src="js/assets/mdb.min.js" type="text/rocketscript"></script>

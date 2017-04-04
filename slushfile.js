@@ -87,6 +87,14 @@ gulp.task('default', function (done) {
                     value: 'includeBootstrap',
                     checked: true
                   }, {
+                    name: 'Font-Awesome',
+                    value: 'includeFontAwesome',
+                    checked: true
+                  }, {
+                    name: 'JQuery',
+                    value: 'includeJQuery',
+                    checked: true
+                  }, {
                     name: 'MDBootstrap',
                     value: 'includeMDBootstrap',
                     checked: false
@@ -96,9 +104,14 @@ gulp.task('default', function (done) {
                     checked: false
                   }]
     }, {
-        type: 'confirm',
-        name: 'addHeaderNav',
-        message: 'Add Navbar to index?'
+        name: 'htmlinserts',
+        message: 'What Should I Add To Your Code for you?',
+        type: 'checkbox',
+        choices: [{
+                    name: 'Navbar',
+                    value: 'navbar',
+                    checked: false
+                  }]
     }, {
         type: 'confirm',
         name: 'moveon',
@@ -116,6 +129,7 @@ gulp.task('default', function (done) {
                   | __ |  | |   | |\/| |\__ \|  _|/ _` || '_||  _| \n\
                   |_||_|  |_|   |_|  |_||___/ \__|\__,_||_|   \__| \n\
                                                                    \n\
+                      A Slush Based HTML5 Template Generator     \n\
                 ")
     inquirer.prompt(prompts,
         function (answers) {
@@ -126,11 +140,16 @@ gulp.task('default', function (done) {
             answers.appNameSlug = _.slugify(answers.appName);
             if(answers.frameworks.includes('includeMDBootstrap')){
               //Download MDBootstrap for Bootstrap 4
-                download(' https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css') //MDB CSS
+                download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css') //MDB CSS
                   .pipe(gulp.dest("./css/assets"));
 
                 download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js') //MDB JS
                   .pipe(gulp.dest("./js/assets"));
+            }
+
+            if(answers.frameworks.includes('includeFontAwesome')){
+              download('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') //MDB CSS
+                .pipe(gulp.dest("./css/assets"));
             }
 
             if(answers.frameworks.includes('includeFlatUI')){
@@ -154,6 +173,11 @@ gulp.task('default', function (done) {
 
                 download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') //Bootstrap JS
                   .pipe(gulp.dest("./js/assets"));
+            }
+
+            if(answers.frameworks.includes('includeJQuery')) {
+                download('https://code.jquery.com/jquery-3.2.1.min.js')
+                  .pipe(gulp.dest("./js/assets"))
             }
 
             gulp.src(__dirname + '/templates/**')
