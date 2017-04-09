@@ -1,0 +1,24 @@
+<% if(htmlinserts.includes('navbar')) {%>
+<% if(frameworks.includes('includeFlatUI')) { %>
+nav.navbar.navbar-inverse(role='navigation')
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-01')
+      span.sr-only Toggle navigation
+    |
+    a.navbar-brand(href='#') <%= appName %>
+  #navbar-collapse-01.collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li.active
+        a(href='#fakelink') Products
+      li
+        a(href='#fakelink') Features
+    form.navbar-form.navbar-right(action='#', role='search')
+      .form-group
+        .input-group
+          input#navbarInput-01.form-control(type='search', placeholder='Search')
+          |
+          span.input-group-btn
+            button.btn(type='submit')
+              span.fui-search
+<% } %>
+<% } %>

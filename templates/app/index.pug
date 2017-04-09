@@ -1,0 +1,9 @@
+doctype html
+html
+  include pug/head.pug
+  body
+    include pug/nav.pug
+    p example content for <% appName %>
+  <% if(frameworks.includes('includeBootstrap')) { %>script(src='js/assets/bootstrap.min.js', type='text/rocketscript')<% } %>
+  <% if(frameworks.includes('includeJQuery')) { %>script(src='js/assets/jquery-3.2.1.min.js', type='text/rocketscript')<% } %>
+  <% if(frameworks.includes('includeMDBootstrap')) { %>script(src='js/assets/mdb.min.js', type='text/rocketscript')<% } %>

@@ -9,6 +9,7 @@
     "gulp": "*",
     "gulp-sass": "*",
     "gulp-autoprefixer": "*",
+    "gulp-pug": "*",
     "gulp-clean-css": "*",
     "gulp-sourcemaps": "*",
     "gulp-minify": "*",
