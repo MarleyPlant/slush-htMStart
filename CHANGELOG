@@ -13,3 +13,8 @@ v0.2.5:
   changes:
     - Switched to using Browser-Sync.
     - Reorganized Code.
+v0.2.6:
+  date: 2017-04-09
+  changes:
+    - Minifying CSS
+    - Source Mapping
