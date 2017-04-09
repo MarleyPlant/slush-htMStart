@@ -18,3 +18,7 @@ v0.2.6:
   changes:
     - Minifying CSS
     - Source Mapping
+v0.2.7:
+  date: 2017-04098
+  changes:
+    - Start using the Jade / Pug Preprocessor
