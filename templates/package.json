@@ -1,5 +1,6 @@
 {
   "name": "<%= appNameSlug %>",
+  "description": "<%= appDescription %>",
   "version": "<%= appVersion %>",
   "repository": {
     "type": "git",

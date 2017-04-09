@@ -22,10 +22,7 @@ gulp.task('sass', function() {
     return gulp.src("app/scss/*.scss")
         .pipe(sass())
         .pipe(sourcemaps.init())
-        .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ' Minified: ' + details.stats.minifiedSize);
-        }))
+        .pipe(cleanCSS({debug: true})
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("app/css"))
         .pipe(browserSync.stream());
