@@ -10,6 +10,7 @@
     "gulp-sass": "*",
     "gulp-autoprefixer": "*",
     "gulp-clean-css": "*",
+    "gulp-sourcemaps": "*",
     "gulp-minify": "*",
     "browser-sync": "*"
   }
