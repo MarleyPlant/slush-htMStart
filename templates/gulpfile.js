@@ -22,7 +22,7 @@ gulp.task('sass', function() {
     return gulp.src("app/scss/*.scss")
         .pipe(sass())
         .pipe(sourcemaps.init())
-        .pipe(cleanCSS({debug: true})
+        .pipe(cleanCSS({debug: true}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("app/css"))
         .pipe(browserSync.stream());
