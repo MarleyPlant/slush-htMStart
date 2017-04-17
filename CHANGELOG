@@ -19,6 +19,12 @@ v0.2.6:
     - Minifying CSS
     - Source Mapping
 v0.2.7:
-  date: 2017-04098
+  date: 2017-04-09
   changes:
     - Start using the Jade / Pug Preprocessor
+v0.3:
+  date: 2017-04-17
+  changes:
+    - Switch to downloading bootstrap through bower (future changes to do the same for other packages, etc.)
+    - Improve SCSS Layout to make it more readable
+    - Change from one app directory to a "src" and "dist" directory

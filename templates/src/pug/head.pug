@@ -1,0 +1,7 @@
+head
+  title <%= appName %>
+  <% if(frameworks.includes('includeBootstrap')) { %>link(href='css/bootstrap.css', rel='stylesheet') <% } %>
+  <% if(frameworks.includes('includeFontAwesome')) { %>link(href='css/font-awesome.min.css', rel='stylesheet') <% } %>
+  <% if(frameworks.includes('includeFlatUI')) { %>link(href='css/flat-ui.css', rel='stylesheet') <% } %>
+  <% if(frameworks.includes('includeMDBootstrap')) { %>link(href='css/mdb.css', rel='stylesheet') <% } %>
+  link(href='css/site.css', rel='stylesheet')

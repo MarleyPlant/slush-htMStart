@@ -1,0 +1,20 @@
+{
+  "name": "<%= appNameSlug %>",
+  "homepage": "https://github.com/<%= userName %>/<%= appNameSlug %>",
+  "authors": [
+    "Marley Plant <marley@marleyplant.com>"
+  ],
+  "description": "<%= appDescription %>",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+      <% if(frameworks.includes('includeBootstrap')) { %>"bootstrap-sass": "^3.3.7"<% } %>
+  }
+}

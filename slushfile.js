@@ -138,46 +138,15 @@ gulp.task('default', function (done) {
             }
 
             answers.appNameSlug = _.slugify(answers.appName);
-            if(answers.frameworks.includes('includeMDBootstrap')){
-              //Download MDBootstrap for Bootstrap 4
-                download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css') //MDB CSS
-                  .pipe(gulp.dest("./app/css/assets"));
-
-                download('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js') //MDB JS
-                  .pipe(gulp.dest("./app/js/assets"));
-            }
-
             if(answers.frameworks.includes('includeFontAwesome')){
               download('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') //MDB CSS
-                .pipe(gulp.dest("./app/css/assets"));
+                .pipe(gulp.dest("./dist/css/"));
             }
 
             if(answers.frameworks.includes('includeFlatUI')){
                 //Download Flat-UI
                 download('https://designmodo.github.io/Flat-UI/dist/css/flat-ui.css') //FlatUI CSS
-                  .pipe(gulp.dest("./app/css/assets"));
-            }
-
-            if(answers.frameworks.includes('includeBootstrap' && answers.frameworks.includes('includeMDBootstrap') )){
-                //Download Bootstrap 4 Alpha
-                download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css') //Bootstrap CSS
-                  .pipe(gulp.dest("./app/css/assets"));
-
-                download('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js') //Bootstrap JS
-                  .pipe(gulp.dest("./app/js/assets"));
-            }
-            else if (answers.frameworks.includes('includeBootstrap')) {
-                //Download Latest Bootstrap 3
-                download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') //Bootstrap CSS
-                  .pipe(gulp.dest("./app/css/assets"));
-
-                download('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') //Bootstrap JS
-                  .pipe(gulp.dest("./app/js/assets"));
-            }
-
-            if(answers.frameworks.includes('includeJQuery')) {
-                download('https://code.jquery.com/jquery-3.2.1.min.js')
-                  .pipe(gulp.dest("./app/js/assets"))
+                  .pipe(gulp.dest("./dist/css/"));
             }
 
             gulp.src(__dirname + '/templates/**')
