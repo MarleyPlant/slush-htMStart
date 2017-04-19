@@ -12,8 +12,10 @@
     "gulp-autoprefixer": "*",
     "gulp-pug": "*",
     "gulp-clean-css": "*",
+    "gulp-filter": "*",
     "gulp-sourcemaps": "*",
     "gulp-minify": "*",
-    "browser-sync": "*"
+    "browser-sync": "*",
+    "main-bower-files": "*"
   }
 }

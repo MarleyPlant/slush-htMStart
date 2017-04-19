@@ -2,7 +2,7 @@
   "name": "<%= appNameSlug %>",
   "homepage": "https://github.com/<%= userName %>/<%= appNameSlug %>",
   "authors": [
-    "Marley Plant <marley@marleyplant.com>"
+    "<%= authorName %> <<%= authorEmail %>>"
   ],
   "description": "<%= appDescription %>",
   "main": "",
@@ -14,7 +14,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
       <% if(frameworks.includes('includeBootstrap')) { %>"bootstrap-sass": "^3.3.7"<% } %>
   }
 }
