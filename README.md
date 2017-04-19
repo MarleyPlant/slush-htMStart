@@ -1,6 +1,7 @@
 # Slush htmstart
 [![BuildStatus](https://travis-ci.org/MarleyPlant/slush-htMStart.svg?branch=master)](https://travis-ci.org/MarleyPlant/slush-htMStart)
 [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-htmstart.png)](http://badges.enytc.com/for/npm/slush-htmstart)
+[![dependencies Status](https://david-dm.org/marleyplant/slush-htMstart/status.svg)](https://david-dm.org/marleyplant/slush-htMstart)
 
 > A slush generator for modern websites.
 
