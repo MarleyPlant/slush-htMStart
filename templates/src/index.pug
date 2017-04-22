@@ -5,6 +5,6 @@ html
     include pug/nav.pug
     p example content for <%= appName %>
     p <%= appDescription %>
-  <% if(frameworks.includes('includeBootstrap')) { %>script(src='js/assets/bootstrap.min.js', type='text/rocketscript')<% } %>
-  <% if(frameworks.includes('includeJQuery')) { %>script(src='js/assets/jquery-3.2.1.min.js', type='text/rocketscript')<% } %>
-  <% if(frameworks.includes('includeMDBootstrap')) { %>script(src='js/assets/mdb.min.js', type='text/rocketscript')<% } %>
+  <% if(frameworks.includes('includeBootstrap')) { %>script(src='js/bootstrap.js', type='text/rocketscript')<% } %>
+  <% if(frameworks.includes('includeJQuery')) { %>script(src='js/jquery.js', type='text/rocketscript')<% } %>
+  <% if(frameworks.includes('includeMDBootstrap')) { %>script(src='js/mdb.min.js', type='text/rocketscript')<% } %>

@@ -9,13 +9,13 @@ var gulp        = require('gulp'),
 
 
 gulp.task('sass', function() { // Compile sass into CSS & auto-inject into browsers
-    return gulp.src("src/scss/**/*.scss")
-        .pipe(sass())
-        .pipe(sourcemaps.init())
-        .pipe(cleanCSS({debug: true}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest("dist/css"))
-        .pipe(browserSync.stream());
+  return gulp.src("src/scss/**/*.scss")
+      .pipe(sass())
+      .pipe(sourcemaps.init())
+      .pipe(cleanCSS({debug: true}))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest("dist/css"))
+      .pipe(browserSync.stream());
 });
 
 gulp.task('pug', function() { //Compile pug into HTML & export into dist directory
