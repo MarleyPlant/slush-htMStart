@@ -24,12 +24,17 @@ gulp.task('pug', function() { //Compile pug into HTML & export into dist directo
       .pipe(gulp.dest("dist/"))
 })
 
-//Handle Bower_Components
-gulp.task('bower-js', function() { //Build and compile bower-js components to the dist directory.
-  return gulp.src(mainBowerFiles())
-      .pipe(filter('**/*.js'))
-      .pipe(gulp.dest("dist/js"));
+gulp.task('img', function() { //Compress images and move the compressed images to the dist directory
+  return gulp.src('src/img/**/*.jpeg')
+      .pipe(gulp.dest("dist/img"));
 });
+
+gulp.task('js', function(){
+  return gulp.src('src/js/**/*.js')
+    .pipe(gulp.dest('dist/js'));
+})
+
+//Handle Bower_Components
 
 gulp.task('bower-sass', function() { //Build and compile bower-sass components to the dist directory.
   return gulp.src(mainBowerFiles())
@@ -41,6 +46,23 @@ gulp.task('bower-sass', function() { //Build and compile bower-sass components t
       .pipe(gulp.dest("dist/css"))
       .pipe(browserSync.stream());
 });
+
+gulp.task('bower-css', function() { //Build and compile bower-css components to the dist directory.
+  return gulp.src(mainBowerFiles())
+      .pipe(filter('**/*.css'))
+      .pipe(sourcemaps.init())
+      .pipe(cleanCSS({debug: true}))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest("dist/css"))
+      .pipe(browserSync.stream());
+});
+
+gulp.task('bower-js', function() { //Build and compile bower-js components to the dist directory.
+  return gulp.src(mainBowerFiles())
+      .pipe(filter('**/*.js'))
+      .pipe(gulp.dest("dist/js"));
+});
+
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass', 'pug', 'bower'], function() { //Ran as default when command 'gulp' is typed.
@@ -55,5 +77,5 @@ gulp.task('serve', ['sass', 'pug', 'bower'], function() { //Ran as default when 
 });
 
 gulp.task('build', ['sass', 'pug', 'bower']); //Build and compile everything into the dist directory.
-gulp.task('bower', ['bower-js', 'bower-sass']); //Build and compile the Bower_Components.
+gulp.task('bower', ['bower-js', 'bower-sass', 'bower-css']); //Build and compile the Bower_Components.
 gulp.task('default', ['serve']); //Build and Compile everything then run a browserSync server.
