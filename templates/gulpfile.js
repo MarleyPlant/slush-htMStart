@@ -76,6 +76,6 @@ gulp.task('serve', ['sass', 'pug', 'bower'], function() { //Ran as default when 
     gulp.watch("dist/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('build', ['sass', 'pug', 'bower']); //Build and compile everything into the dist directory.
+gulp.task('build', ['sass', 'pug', 'js', 'img' 'bower']); //Build and compile everything into the dist directory.
 gulp.task('bower', ['bower-js', 'bower-sass', 'bower-css']); //Build and compile the Bower_Components.
 gulp.task('default', ['serve']); //Build and Compile everything then run a browserSync server.
